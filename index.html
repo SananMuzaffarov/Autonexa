@@ -1,30 +1,34 @@
 <!DOCTYPE html>
-
-
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AutoNexa — Autonomous Parking & Recall System</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
     <a class="nav__brand" href="#hero" aria-label="AutoNexa home">
-      <!-- Put your logo file here: assets/LogoNexa.png -->
-      <img src="assets/LogoNexa.png" alt="AutoNexa logo" class="nav__logo" />
+      <img src="autonexa-logo.png" alt="AutoNexa logo" class="nav__logo" />
       <span>AutoNexa</span>
     </a>
 
     <button class="nav__toggle" id="navToggle" aria-label="Open navigation">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
     <ul class="nav__links" id="navLinks">
@@ -42,7 +46,9 @@
     <div class="container hero__layout">
       <div class="hero__content reveal">
         <p class="eyebrow">METU EE493 / EE494 Project</p>
+
         <h1>Autonomous Parking & Recall System</h1>
+
         <p class="hero__lead">
           AutoNexa is a compact autonomous vehicle prototype that maps its surroundings,
           parks itself, and returns to a selected position through a mobile operator console.
@@ -56,7 +62,7 @@
 
       <div class="hero__visual reveal">
         <div class="logo-card">
-          <img src="assets/LogoNexa.png" alt="AutoNexa logo" />
+          <img src="autonexa-logo.png" alt="AutoNexa logo" />
         </div>
       </div>
     </div>
@@ -78,25 +84,36 @@
         <article class="card reveal">
           <span class="card__mark"></span>
           <h3>Autonomous Parking</h3>
-          <p>The vehicle drives to a selected parking slot and performs the maneuver without manual control.</p>
+          <p>
+            The vehicle drives to a selected parking slot and performs the maneuver
+            without manual control.
+          </p>
         </article>
 
         <article class="card reveal">
           <span class="card__mark"></span>
           <h3>Vehicle Recall</h3>
-          <p>The user can command the robot to return to a saved position from the mobile app.</p>
+          <p>
+            The user can command the robot to return to a saved position from the mobile app.
+          </p>
         </article>
 
         <article class="card reveal">
           <span class="card__mark"></span>
           <h3>Live Environment Awareness</h3>
-          <p>LiDAR-based perception allows the robot to understand the indoor test area and avoid obstacles.</p>
+          <p>
+            LiDAR-based perception allows the robot to understand the indoor test area
+            and avoid obstacles.
+          </p>
         </article>
 
         <article class="card reveal">
           <span class="card__mark"></span>
           <h3>Mobile Operator Console</h3>
-          <p>The app provides control, navigation commands, system status, and emergency stop access.</p>
+          <p>
+            The app provides control, navigation commands, system status, and emergency
+            stop access.
+          </p>
         </article>
       </div>
     </div>
@@ -120,25 +137,33 @@
           <h3>Sense</h3>
           <p>LiDAR scans the indoor test environment.</p>
         </div>
+
         <div class="flow__arrow">→</div>
+
         <div class="flow__item">
           <span>02</span>
           <h3>Map</h3>
           <p>The robot builds and updates a live map.</p>
         </div>
+
         <div class="flow__arrow">→</div>
+
         <div class="flow__item">
           <span>03</span>
           <h3>Plan</h3>
           <p>The navigation stack selects a safe route.</p>
         </div>
+
         <div class="flow__arrow">→</div>
+
         <div class="flow__item">
           <span>04</span>
           <h3>Check</h3>
           <p>Commands pass through software and hardware safety layers.</p>
         </div>
+
         <div class="flow__arrow">→</div>
+
         <div class="flow__item">
           <span>05</span>
           <h3>Move</h3>
@@ -164,7 +189,8 @@
         <p class="section__label">Demo</p>
         <h2>Prototype Media</h2>
         <p>
-          Vehicle photos, app screenshots, and demo video can be added here after the final media files are ready.
+          Vehicle photos, app screenshots, and demo video can be added here after the final
+          media files are ready.
         </p>
       </div>
 
@@ -193,25 +219,35 @@
         <article class="result reveal">
           <span class="result__value">~8 cm</span>
           <h3>Parking Accuracy</h3>
-          <p>Current prototype accuracy is in the practical sub-10 cm range, with further tuning planned.</p>
+          <p>
+            Current prototype accuracy is in the practical sub-10 cm range,
+            with further tuning planned.
+          </p>
         </article>
 
         <article class="result reveal">
           <span class="result__value">~1 h</span>
           <h3>Battery Runtime</h3>
-          <p>The onboard battery supports extended testing beyond the required session duration.</p>
+          <p>
+            The onboard battery supports extended testing beyond the required session duration.
+          </p>
         </article>
 
         <article class="result reveal">
           <span class="result__value">150 ms</span>
           <h3>E-STOP Response</h3>
-          <p>The emergency stop system halts the vehicle quickly and reliably during tests.</p>
+          <p>
+            The emergency stop system halts the vehicle quickly and reliably during tests.
+          </p>
         </article>
 
         <article class="result reveal">
           <span class="result__value">PASS</span>
           <h3>Core Integration</h3>
-          <p>Mobile control, LiDAR mapping, navigation, motor actuation, and safety chain were integrated.</p>
+          <p>
+            Mobile control, LiDAR mapping, navigation, motor actuation, and safety chain
+            were integrated.
+          </p>
         </article>
       </div>
     </div>
@@ -258,8 +294,8 @@
       <p class="section__label">Next Steps</p>
       <h2>Future Improvements</h2>
       <p>
-        The next iteration will focus on tighter final parking precision, closed-loop wheel-speed control,
-        and richer app visualization with real prototype media.
+        The next iteration will focus on tighter final parking precision, closed-loop
+        wheel-speed control, and richer app visualization with real prototype media.
       </p>
     </div>
   </section>
