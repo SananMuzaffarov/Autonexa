@@ -4,179 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AutoNexa — Autonomous Parking & Recall System</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <nav class="nav" id="nav">
-    <div class="nav__logo">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="1.5"/>
-        <circle cx="14" cy="14" r="5" fill="var(--accent)"/>
-        <line x1="14" y1="1" x2="14" y2="8" stroke="var(--accent)" stroke-width="1.5"/>
-        <line x1="14" y1="20" x2="14" y2="27" stroke="var(--accent)" stroke-width="1.5"/>
-        <line x1="1" y1="14" x2="8" y2="14" stroke="var(--accent)" stroke-width="1.5"/>
-        <line x1="20" y1="14" x2="27" y2="14" stroke="var(--accent)" stroke-width="1.5"/>
-      </svg>
+    <a class="nav__brand" href="#hero" aria-label="AutoNexa home">
+      <!-- Put your logo file here: assets/LogoNexa.png -->
+      <img src="assets/LogoNexa.png" alt="AutoNexa logo" class="nav__logo" />
       <span>AutoNexa</span>
-    </div>
-    <ul class="nav__links">
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav__links" id="navLinks">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#architecture">Architecture</a></li>
-      <li><a href="#subsystems">Subsystems</a></li>
       <li><a href="#results">Results</a></li>
       <li><a href="#team">Team</a></li>
     </ul>
-    <div class="nav__tag">EE493/494 · METU · 2026</div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero__grid-bg"></div>
-    <div class="hero__scan-line"></div>
+  <header class="hero" id="hero">
+    <div class="hero__bg"></div>
 
-    <div class="hero__content">
-      <div class="hero__eyebrow">
-        <span class="tag tag--pulse">AUTONOMOUS SYSTEM</span>
-        <span class="tag">VERSION 1.0</span>
-        <span class="tag">31 MAY 2026</span>
-      </div>
+    <div class="container hero__layout">
+      <div class="hero__content reveal">
+        <p class="eyebrow">METU EE493 / EE494 Project</p>
+        <h1>Autonomous Parking & Recall System</h1>
+        <p class="hero__lead">
+          AutoNexa is a compact autonomous vehicle prototype that maps its surroundings,
+          parks itself, and returns to a selected position through a mobile operator console.
+        </p>
 
-      <h1 class="hero__title">
-        <span class="hero__title-main">Auto</span><span class="hero__title-accent">Nexa</span>
-      </h1>
-      <p class="hero__subtitle">Autonomous Parking &amp; Recall System</p>
-      <p class="hero__desc">
-        A low-cost, map-free autonomous robot that senses, localizes, plans, 
-        and actuates through a rigorous multi-layer safety architecture — 
-        operable entirely from a mobile phone.
-      </p>
-
-      <div class="hero__stats">
-        <div class="stat">
-          <span class="stat__val">$262</span>
-          <span class="stat__label">Total BOM Cost</span>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__val">61 min</span>
-          <span class="stat__label">Battery Endurance</span>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__val">~8 cm</span>
-          <span class="stat__label">Parking Accuracy</span>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__val">150 ms</span>
-          <span class="stat__label">E-STOP Response</span>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#overview">Explore Project</a>
+          <a class="btn btn--secondary" href="#results">See Results</a>
         </div>
       </div>
 
-      <div class="hero__cta">
-        <a href="#overview" class="btn btn--primary">Explore System</a>
-        <a href="#results" class="btn btn--ghost">View Results</a>
+      <div class="hero__visual reveal">
+        <div class="logo-card">
+          <img src="assets/LogoNexa.png" alt="AutoNexa logo" />
+        </div>
       </div>
     </div>
-
-    <div class="hero__visual">
-      <div class="robot-diagram">
-        <div class="robot-diagram__ring ring-1"></div>
-        <div class="robot-diagram__ring ring-2"></div>
-        <div class="robot-diagram__ring ring-3"></div>
-        <div class="robot-diagram__core">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <!-- Chassis body -->
-            <rect x="15" y="25" width="50" height="30" rx="4" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/>
-            <!-- Wheels -->
-            <rect x="8" y="23" width="10" height="7" rx="2" fill="var(--accent-dim)"/>
-            <rect x="62" y="23" width="10" height="7" rx="2" fill="var(--accent-dim)"/>
-            <rect x="8" y="50" width="10" height="7" rx="2" fill="var(--accent-dim)"/>
-            <rect x="62" y="50" width="10" height="7" rx="2" fill="var(--accent-dim)"/>
-            <!-- LiDAR -->
-            <circle cx="40" cy="30" r="6" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-            <circle cx="40" cy="30" r="2" fill="var(--accent)"/>
-            <!-- RPi -->
-            <rect x="27" y="35" width="14" height="10" rx="1" fill="var(--accent)" opacity="0.3" stroke="var(--accent)" stroke-width="1"/>
-            <!-- Pico -->
-            <rect x="44" y="37" width="10" height="6" rx="1" fill="var(--accent-2)" opacity="0.3" stroke="var(--accent-2)" stroke-width="1"/>
-            <!-- Scan lines from LiDAR -->
-            <line x1="40" y1="30" x2="10" y2="10" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
-            <line x1="40" y1="30" x2="70" y2="10" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
-            <line x1="40" y1="30" x2="75" y2="35" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
-            <line x1="40" y1="30" x2="5" y2="35" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
-          </svg>
-        </div>
-        <div class="robot-diagram__label top">SLAMTEC C1 LiDAR</div>
-        <div class="robot-diagram__label right">Raspberry Pi 5</div>
-        <div class="robot-diagram__label bottom">Ackermann Chassis</div>
-        <div class="robot-diagram__label left">12.8V Lead-Acid</div>
-      </div>
-    </div>
-  </section>
+  </header>
 
   <!-- OVERVIEW -->
   <section class="section" id="overview">
     <div class="container">
-      <div class="section__header">
-        <span class="section__num">01</span>
-        <h2 class="section__title">System Overview</h2>
-        <p class="section__desc">AutoNexa addresses autonomous navigation in constrained indoor parking environments — surveying the space, driving to designated slots, and recalling to user-defined locations on command.</p>
+      <div class="section__header reveal">
+        <p class="section__label">Overview</p>
+        <h2>What AutoNexa Does</h2>
+        <p>
+          The system combines sensing, navigation, embedded control, and a mobile app
+          into one small-scale autonomous parking platform.
+        </p>
       </div>
 
-      <div class="cards-grid">
-        <div class="card card--highlight">
-          <div class="card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="var(--accent)" stroke-width="1.5"/><circle cx="16" cy="16" r="3" fill="var(--accent)"/><path d="M16 6v4M16 22v4M6 16h4M22 16h4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="card__title">Map-Free Exploration</h3>
-          <p class="card__text">Builds a live occupancy map using LiDAR-based SLAM Toolbox. No pre-saved map required — the robot surveys the environment on every session.</p>
-        </div>
+      <div class="card-grid">
+        <article class="card reveal">
+          <span class="card__mark"></span>
+          <h3>Autonomous Parking</h3>
+          <p>The vehicle drives to a selected parking slot and performs the maneuver without manual control.</p>
+        </article>
 
-        <div class="card">
-          <div class="card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 28L12 8l8 12 4-6 4 14" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="card__title">Layered Safety</h3>
-          <p class="card__text">6-layer safety pipeline from velocity smoother to hardware E-STOP latch. No planner output reaches motors without passing every stage.</p>
-        </div>
+        <article class="card reveal">
+          <span class="card__mark"></span>
+          <h3>Vehicle Recall</h3>
+          <p>The user can command the robot to return to a saved position from the mobile app.</p>
+        </article>
 
-        <div class="card">
-          <div class="card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="8" y="8" width="16" height="16" rx="2" stroke="var(--accent)" stroke-width="1.5"/><path d="M8 14h16M14 8v16" stroke="var(--accent)" stroke-width="1.5"/></svg>
-          </div>
-          <h3 class="card__title">Ackermann Kinematics</h3>
-          <p class="card__text">SMAC Hybrid-A* with REEDS_SHEPP model plans forward and reverse maneuvers. Minimum turning radius 0.50 m with conservative margin.</p>
-        </div>
+        <article class="card reveal">
+          <span class="card__mark"></span>
+          <h3>Live Environment Awareness</h3>
+          <p>LiDAR-based perception allows the robot to understand the indoor test area and avoid obstacles.</p>
+        </article>
 
-        <div class="card">
-          <div class="card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="10" y="4" width="12" height="20" rx="2" stroke="var(--accent)" stroke-width="1.5"/><path d="M14 20h4M16 8v6" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="card__title">Mobile Operator Console</h3>
-          <p class="card__text">Flutter app communicates via Flask HTTP/WebSocket bridge. Full map view, waypoints, nav goals, live tuning, and E-STOP from your phone.</p>
-        </div>
-
-        <div class="card">
-          <div class="card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 2"/><path d="M16 8v8l4 4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="card__title">50 Hz Real-Time Control</h3>
-          <p class="card__text">Raspberry Pi Pico RP2040 runs deterministic firmware loop at 50 Hz. Independent watchdog and latching E-STOP on the embedded side.</p>
-        </div>
-
-        <div class="card">
-          <div class="card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 16h6l4-8 4 16 4-8 2 4h8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="card__title">4× Battery Margin</h3>
-          <p class="card__text">12.8 V / 7 Ah lead-acid pack delivers ~61 minutes endurance — over 4× the 15-minute requirement with sub-10% voltage sag under load.</p>
-        </div>
+        <article class="card reveal">
+          <span class="card__mark"></span>
+          <h3>Mobile Operator Console</h3>
+          <p>The app provides control, navigation commands, system status, and emergency stop access.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -184,691 +102,114 @@
   <!-- ARCHITECTURE -->
   <section class="section section--dark" id="architecture">
     <div class="container">
-      <div class="section__header">
-        <span class="section__num">02</span>
-        <h2 class="section__title">System Architecture</h2>
-        <p class="section__desc">A strictly layered perception-to-actuation chain. No component can bypass its safety stage.</p>
+      <div class="section__header reveal">
+        <p class="section__label">Architecture</p>
+        <h2>A Simple, Safe Control Chain</h2>
+        <p>
+          AutoNexa follows a layered structure: sensing first, decision-making next,
+          and actuator commands only after safety checks.
+        </p>
       </div>
 
-      <div class="arch-flow">
-        <div class="arch-flow__pipeline">
-
-          <div class="arch-node arch-node--sensor">
-            <div class="arch-node__icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="11" r="3" fill="currentColor"/></svg>
-            </div>
-            <div class="arch-node__info">
-              <span class="arch-node__layer">SENSING</span>
-              <h4>SLAMTEC C1 LiDAR</h4>
-              <p>360° scan · 10 Hz · /scan</p>
-            </div>
-          </div>
-          <div class="arch-arrow">▼</div>
-
-          <div class="arch-node arch-node--perception">
-            <div class="arch-node__icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 11 Q7 3 11 3 Q15 3 19 11 Q15 19 11 19 Q7 19 3 11Z" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="11" cy="11" r="3" fill="currentColor"/></svg>
-            </div>
-            <div class="arch-node__info">
-              <span class="arch-node__layer">PERCEPTION</span>
-              <h4>SLAM + Scan Matcher</h4>
-              <p>map · odom · tf</p>
-            </div>
-          </div>
-          <div class="arch-arrow">▼</div>
-
-          <div class="arch-node arch-node--nav">
-            <div class="arch-node__icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18L11 4l7 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 13h8" stroke="currentColor" stroke-width="1.5"/></svg>
-            </div>
-            <div class="arch-node__info">
-              <span class="arch-node__layer">NAVIGATION</span>
-              <h4>SMAC Hybrid-A* + RPP</h4>
-              <p>/cmd_vel</p>
-            </div>
-          </div>
-          <div class="arch-arrow">▼</div>
-
-          <div class="arch-node arch-node--safety">
-            <div class="arch-node__icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L4 6v6c0 4.4 2.9 8.5 7 9.8C15.1 20.5 18 16.4 18 12V6l-7-4z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 11l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <div class="arch-node__info">
-              <span class="arch-node__layer">SAFETY CHAIN</span>
-              <h4>Velocity Smoother + Collision Monitor</h4>
-              <p>/cmd_vel_safe</p>
-            </div>
-          </div>
-          <div class="arch-arrow">▼</div>
-
-          <div class="arch-node arch-node--bridge">
-            <div class="arch-node__icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M4 7h14M4 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <div class="arch-node__info">
-              <span class="arch-node__layer">BRIDGE</span>
-              <h4>nav2_pico_bridge</h4>
-              <p>SPEED / SERVO_PWM · 30 Hz</p>
-            </div>
-          </div>
-          <div class="arch-arrow">▼</div>
-
-          <div class="arch-node arch-node--firmware">
-            <div class="arch-node__icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="4" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="8" y="8" width="6" height="6" fill="currentColor" opacity="0.5"/></svg>
-            </div>
-            <div class="arch-node__info">
-              <span class="arch-node__layer">FIRMWARE</span>
-              <h4>Raspberry Pi Pico · 50 Hz</h4>
-              <p>PWM · GPIO · E-STOP latch</p>
-            </div>
-          </div>
-          <div class="arch-arrow">▼</div>
-
-          <div class="arch-node arch-node--actuator">
-            <div class="arch-node__icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="11" r="2" fill="currentColor"/><path d="M11 4v3M11 15v3M4 11h3M15 11h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <div class="arch-node__info">
-              <span class="arch-node__layer">ACTUATION</span>
-              <h4>Servo + L298N + DC Motors</h4>
-              <p>Ackermann drive</p>
-            </div>
-          </div>
-
+      <div class="flow reveal">
+        <div class="flow__item">
+          <span>01</span>
+          <h3>Sense</h3>
+          <p>LiDAR scans the indoor test environment.</p>
         </div>
-
-        <div class="arch-flow__sidebar">
-          <div class="sidebar-widget">
-            <h4 class="sidebar-widget__title">Safety Layers</h4>
-            <div class="safety-layers">
-              <div class="slayer"><span class="slayer__num">1</span><span>Velocity Smoother</span></div>
-              <div class="slayer"><span class="slayer__num">2</span><span>Collision Monitor</span></div>
-              <div class="slayer"><span class="slayer__num">3</span><span>Bridge Velocity Clamp</span></div>
-              <div class="slayer"><span class="slayer__num">4</span><span>Bridge Accel Cap</span></div>
-              <div class="slayer"><span class="slayer__num">5a</span><span>RPi5 Watchdog (200ms)</span></div>
-              <div class="slayer slayer--critical"><span class="slayer__num">5b</span><span>Pico Watchdog (200ms)</span></div>
-              <div class="slayer slayer--critical"><span class="slayer__num">6</span><span>Latching E-STOP</span></div>
-            </div>
-          </div>
-
-          <div class="sidebar-widget">
-            <h4 class="sidebar-widget__title">Key ROS 2 Topics</h4>
-            <div class="topics-list">
-              <div class="topic"><span class="topic__name">/scan</span><span class="topic__dir">→ Perception</span></div>
-              <div class="topic"><span class="topic__name">/map</span><span class="topic__dir">→ Navigation</span></div>
-              <div class="topic"><span class="topic__name">/odom</span><span class="topic__dir">→ Navigation</span></div>
-              <div class="topic"><span class="topic__name">/cmd_vel</span><span class="topic__dir">→ Safety</span></div>
-              <div class="topic"><span class="topic__name">/cmd_vel_safe</span><span class="topic__dir">→ Bridge</span></div>
-            </div>
-          </div>
-
-          <div class="sidebar-widget">
-            <h4 class="sidebar-widget__title">Mobile App</h4>
-            <p class="sidebar-widget__text">Flutter app via HTTP/WebSocket bridge on port 5000. Joystick, tap-to-navigate, waypoints, E-STOP, live tuning.</p>
-          </div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__item">
+          <span>02</span>
+          <h3>Map</h3>
+          <p>The robot builds and updates a live map.</p>
         </div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__item">
+          <span>03</span>
+          <h3>Plan</h3>
+          <p>The navigation stack selects a safe route.</p>
+        </div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__item">
+          <span>04</span>
+          <h3>Check</h3>
+          <p>Commands pass through software and hardware safety layers.</p>
+        </div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__item">
+          <span>05</span>
+          <h3>Move</h3>
+          <p>The embedded controller drives the steering and motors.</p>
+        </div>
+      </div>
+
+      <div class="tech-strip reveal">
+        <span>Raspberry Pi 5</span>
+        <span>Raspberry Pi Pico</span>
+        <span>ROS 2 / Nav2</span>
+        <span>SLAMTEC C1 LiDAR</span>
+        <span>Flutter App</span>
+        <span>Ackermann Chassis</span>
       </div>
     </div>
   </section>
 
-  <!-- SUBSYSTEMS -->
-  <section class="section" id="subsystems">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__num">03</span>
-        <h2 class="section__title">Subsystems</h2>
-        <p class="section__desc">Four tightly integrated subsystems working in concert.</p>
+  <!-- DEMO MEDIA PLACEHOLDER -->
+  <section class="section section--media" id="demo">
+    <div class="container media-layout">
+      <div class="section__header reveal">
+        <p class="section__label">Demo</p>
+        <h2>Prototype Media</h2>
+        <p>
+          Vehicle photos, app screenshots, and demo video can be added here after the final media files are ready.
+        </p>
       </div>
 
-      <div class="tabs">
-        <div class="tabs__nav">
-          <button class="tabs__btn active" data-tab="embedded">Embedded</button>
-          <button class="tabs__btn" data-tab="perception">Perception</button>
-          <button class="tabs__btn" data-tab="navigation">Navigation</button>
-          <button class="tabs__btn" data-tab="software">Software</button>
-        </div>
-
-        <!-- EMBEDDED -->
-        <div class="tabs__panel active" id="tab-embedded">
-          <div class="subsystem-layout">
-            <div class="subsystem-info">
-              <h3>Embedded Subsystem</h3>
-              <p>Runs on Raspberry Pi Pico (RP2040, dual ARM Cortex-M0+). Firmware written in C with Pico SDK. A single 50 Hz hardware-timer loop is the only scheduling primitive.</p>
-
-              <div class="spec-grid">
-                <div class="spec">
-                  <span class="spec__key">Control Loop</span>
-                  <span class="spec__val">50 Hz (20 ms)</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Motor Driver</span>
-                  <span class="spec__val">L298N H-bridge</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Steering</span>
-                  <span class="spec__val">Servo PWM 50 Hz</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Motor PWM</span>
-                  <span class="spec__val">10 kHz</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Wheelbase</span>
-                  <span class="spec__val">0.25 m</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Max Steer</span>
-                  <span class="spec__val">±30°</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Encoder Res</span>
-                  <span class="spec__val">1320 edges/rev</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Timeout</span>
-                  <span class="spec__val">200 ms</span>
-                </div>
-              </div>
-
-              <div class="loop-diagram">
-                <h4>50 Hz Timer Loop</h4>
-                <div class="loop-steps">
-                  <div class="loop-step"><span>1</span> Read encoders (PIO quadrature decode)</div>
-                  <div class="loop-step"><span>2</span> Forward kinematics → odometry</div>
-                  <div class="loop-step"><span>3</span> Safety check (timeout, E-STOP, heartbeat)</div>
-                  <div class="loop-step"><span>4</span> Apply actuators (servo PWM + L298N)</div>
-                  <div class="loop-step"><span>5</span> Parse ASCII CLI / emit telemetry @ 10 Hz</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="subsystem-visual">
-              <div class="gpio-map">
-                <h4>GPIO Assignments</h4>
-                <div class="gpio-list">
-                  <div class="gpio"><span class="gpio__pin">GP2/3</span><span class="gpio__label">Right motor direction</span></div>
-                  <div class="gpio"><span class="gpio__pin">GP4</span><span class="gpio__label">Right motor PWM enable</span></div>
-                  <div class="gpio"><span class="gpio__pin">GP6/7</span><span class="gpio__label">Left motor direction</span></div>
-                  <div class="gpio"><span class="gpio__pin">GP8</span><span class="gpio__label">Left motor PWM enable</span></div>
-                  <div class="gpio"><span class="gpio__pin">GP15</span><span class="gpio__label">Steering servo PWM</span></div>
-                  <div class="gpio"><span class="gpio__pin">GP10/11</span><span class="gpio__label">Left encoder A/B</span></div>
-                  <div class="gpio"><span class="gpio__pin">GP12/13</span><span class="gpio__label">Right encoder A/B</span></div>
-                  <div class="gpio gpio--special"><span class="gpio__pin">GP25</span><span class="gpio__label">Heartbeat LED (1 Hz / 5 Hz)</span></div>
-                  <div class="gpio gpio--special"><span class="gpio__pin">USB CDC</span><span class="gpio__label">Host comms 115,200 baud</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PERCEPTION -->
-        <div class="tabs__panel" id="tab-perception">
-          <div class="subsystem-layout">
-            <div class="subsystem-info">
-              <h3>Perception Subsystem</h3>
-              <p>LiDAR-only architecture. The 2D rotating LiDAR is the sole source of both mapping (SLAM Toolbox) and dead-reckoning (laser scan matching via ICP).</p>
-
-              <div class="spec-grid">
-                <div class="spec">
-                  <span class="spec__key">Sensor</span>
-                  <span class="spec__val">SLAMTEC C1</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Field of View</span>
-                  <span class="spec__val">360°</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Range</span>
-                  <span class="spec__val">0.05–4.0 m</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Scan Rate</span>
-                  <span class="spec__val">~10 Hz</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Map Resolution</span>
-                  <span class="spec__val">0.02 m/pixel</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Driver</span>
-                  <span class="spec__val">sllidar_ros2</span>
-                </div>
-              </div>
-
-              <div class="filter-chain">
-                <h4>Scan Filter Chain</h4>
-                <div class="filter-stages">
-                  <div class="filter-stage"><span class="filter-stage__num">1</span><div><strong>Range Filter</strong><p>0.05–4.0 m · remove out-of-range returns</p></div></div>
-                  <div class="filter-stage"><span class="filter-stage__num">2</span><div><strong>Shadow Filter</strong><p>10°–170° · remove grazing-angle ghosts</p></div></div>
-                  <div class="filter-stage"><span class="filter-stage__num">3</span><div><strong>Median Filter</strong><p>window 5 · suppress reflective flicker</p></div></div>
-                  <div class="filter-stage"><span class="filter-stage__num">4</span><div><strong>Outlier Filter</strong><p>0.5 m / win 5 · remove multi-path spikes</p></div></div>
-                </div>
-              </div>
-            </div>
-            <div class="subsystem-visual">
-              <div class="tf-tree">
-                <h4>TF Tree</h4>
-                <div class="tf-nodes">
-                  <div class="tf-node tf-node--top">
-                    <span class="tf-frame">map</span>
-                    <p>SLAM Toolbox corrections</p>
-                  </div>
-                  <div class="tf-arrow-v">↓ map→odom</div>
-                  <div class="tf-node">
-                    <span class="tf-frame">odom</span>
-                    <p>laser_scan_matcher ~10 Hz</p>
-                  </div>
-                  <div class="tf-arrow-v">↓ odom→base_link</div>
-                  <div class="tf-node">
-                    <span class="tf-frame">base_link</span>
-                    <p>Robot body frame</p>
-                  </div>
-                  <div class="tf-arrow-v">↓ base_link→laser_link</div>
-                  <div class="tf-node">
-                    <span class="tf-frame">laser_link</span>
-                    <p>Fixed LiDAR mount</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- NAVIGATION -->
-        <div class="tabs__panel" id="tab-navigation">
-          <div class="subsystem-layout">
-            <div class="subsystem-info">
-              <h3>Navigation Subsystem</h3>
-              <p>ROS 2 Nav2 stack on live SLAM map. SMAC Hybrid-A* global planner + Regulated Pure Pursuit local controller. Supports forward and reverse parking maneuvers.</p>
-
-              <div class="spec-grid">
-                <div class="spec">
-                  <span class="spec__key">Global Planner</span>
-                  <span class="spec__val">SMAC Hybrid-A*</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Motion Model</span>
-                  <span class="spec__val">REEDS_SHEPP</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Local Controller</span>
-                  <span class="spec__val">Reg. Pure Pursuit</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Ctrl Frequency</span>
-                  <span class="spec__val">10–20 Hz</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Cruise Speed</span>
-                  <span class="spec__val">0.08 m/s</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Max Speed</span>
-                  <span class="spec__val">0.20 m/s</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Goal Tolerance</span>
-                  <span class="spec__val">5 cm / 0.06 rad</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Lookahead</span>
-                  <span class="spec__val">0.40 m</span>
-                </div>
-              </div>
-
-              <div class="costmap-info">
-                <h4>Costmap Configuration</h4>
-                <div class="costmap-grid">
-                  <div class="costmap-card">
-                    <strong>Local Costmap</strong>
-                    <ul>
-                      <li>2×2 m rolling window</li>
-                      <li>0.02 m/cell resolution</li>
-                      <li>0.14 m inflation radius</li>
-                      <li>Obstacle + Inflation layers</li>
-                    </ul>
-                  </div>
-                  <div class="costmap-card">
-                    <strong>Global Costmap</strong>
-                    <ul>
-                      <li>Full map coverage</li>
-                      <li>0.05 m/cell resolution</li>
-                      <li>0.16 m inflation radius</li>
-                      <li>Static + Obstacle + Inflation</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="subsystem-visual">
-              <div class="vel-pipeline">
-                <h4>Velocity Pipeline</h4>
-                <div class="pipeline-steps">
-                  <div class="ps ps--nav">RPP Controller<br><small>→ /cmd_vel ~10 Hz</small></div>
-                  <div class="ps-arrow">↓</div>
-                  <div class="ps ps--smooth">Velocity Smoother<br><small>→ /cmd_vel_smoothed 20 Hz</small></div>
-                  <div class="ps-arrow">↓</div>
-                  <div class="ps ps--safety">Collision Monitor<br><small>→ /cmd_vel_safe</small></div>
-                  <div class="ps-arrow">↓</div>
-                  <div class="ps ps--bridge">nav2_pico_bridge<br><small>clamp + accel + slew + 200ms timeout</small></div>
-                  <div class="ps-arrow">↓</div>
-                  <div class="ps ps--pico">Pico Firmware 50 Hz<br><small>→ Servo + L298N + Motors</small></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SOFTWARE -->
-        <div class="tabs__panel" id="tab-software">
-          <div class="subsystem-layout">
-            <div class="subsystem-info">
-              <h3>Software &amp; Mobile App</h3>
-              <p>Flutter-based operator console communicates with the RPi5 via a Flask HTTP/WebSocket bridge. The robot runs completely headless — no monitor needed.</p>
-
-              <div class="spec-grid">
-                <div class="spec">
-                  <span class="spec__key">App Framework</span>
-                  <span class="spec__val">Flutter</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Bridge</span>
-                  <span class="spec__val">Flask HTTP/WS</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">Port</span>
-                  <span class="spec__val">5000</span>
-                </div>
-                <div class="spec">
-                  <span class="spec__key">WS Rate</span>
-                  <span class="spec__val">50 Hz joystick</span>
-                </div>
-              </div>
-
-              <div class="endpoints">
-                <h4>Key API Endpoints</h4>
-                <div class="endpoint-list">
-                  <div class="endpoint"><span class="endpoint__method get">GET</span><code>/api/status, /api/map, /api/pose</code></div>
-                  <div class="endpoint"><span class="endpoint__method post">POST</span><code>/api/control, /api/nav_goal</code></div>
-                  <div class="endpoint"><span class="endpoint__method post">POST</span><code>/api/estop, /api/estop_clear</code></div>
-                  <div class="endpoint"><span class="endpoint__method">WS</span><code>/ws/control, /ws/telemetry</code></div>
-                  <div class="endpoint"><span class="endpoint__method get">GET</span><code>/api/waypoints/&lt;name&gt;</code></div>
-                  <div class="endpoint"><span class="endpoint__method post">POST</span><code>/api/calibrate_direction</code></div>
-                </div>
-              </div>
-            </div>
-            <div class="subsystem-visual">
-              <div class="app-features">
-                <h4>Mobile App Features</h4>
-                <div class="feature-list">
-                  <div class="feature"><div class="feature__dot"></div><span>Joystick teleop (SOFT/OFF safety modes)</span></div>
-                  <div class="feature"><div class="feature__dot"></div><span>Live SLAM map view with tap-to-navigate</span></div>
-                  <div class="feature"><div class="feature__dot"></div><span>Save/recall park, summon, home waypoints</span></div>
-                  <div class="feature"><div class="feature__dot"></div><span>E-STOP button and GO to resume</span></div>
-                  <div class="feature"><div class="feature__dot"></div><span>Direction calibration wizard</span></div>
-                  <div class="feature"><div class="feature__dot"></div><span>Live Nav2 speed slider + parameter tuner</span></div>
-                  <div class="feature"><div class="feature__dot"></div><span>Topic health panel (expected vs observed rates)</span></div>
-                  <div class="feature"><div class="feature__dot"></div><span>Costmap clear, mapping restart, pose reset</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="media-placeholder reveal">
+        <div>
+          <strong>Photo / Video Area</strong>
+          <p>Add vehicle image, testbed image, or a short parking demo clip.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- RESULTS -->
-  <section class="section section--dark" id="results">
+  <section class="section" id="results">
     <div class="container">
-      <div class="section__header">
-        <span class="section__num">04</span>
-        <h2 class="section__title">Performance Results</h2>
-        <p class="section__desc">Final integration testing in a 2 m × 2 m indoor parking testbed with marked slots and reconfigurable obstacles.</p>
+      <div class="section__header reveal">
+        <p class="section__label">Results</p>
+        <h2>Current Prototype Performance</h2>
+        <p>
+          The system successfully demonstrates autonomous navigation, parking, recall,
+          mobile control, and emergency-stop behavior in the indoor testbed.
+        </p>
       </div>
 
       <div class="results-grid">
+        <article class="result reveal">
+          <span class="result__value">~8 cm</span>
+          <h3>Parking Accuracy</h3>
+          <p>Current prototype accuracy is in the practical sub-10 cm range, with further tuning planned.</p>
+        </article>
 
-        <div class="result-card result-card--wide">
-          <h3 class="result-card__title">Navigation Target Precision</h3>
-          <p class="result-card__sub">All 5 target IDs · 91.7–100% success rate</p>
-          <div class="bar-chart">
-            <div class="bar-chart__row">
-              <span class="bar-chart__label">ID 8</span>
-              <div class="bar-chart__bar" style="--pct:73.5%; --color: var(--accent)">
-                <span>5.88 cm</span>
-              </div>
-              <span class="bar-chart__rate pass">12/12</span>
-            </div>
-            <div class="bar-chart__row">
-              <span class="bar-chart__label">ID 7</span>
-              <div class="bar-chart__bar" style="--pct:69.9%; --color: var(--accent)">
-                <span>5.59 cm</span>
-              </div>
-              <span class="bar-chart__rate pass">12/12</span>
-            </div>
-            <div class="bar-chart__row">
-              <span class="bar-chart__label">ID 13</span>
-              <div class="bar-chart__bar" style="--pct:69.6%; --color: var(--accent)">
-                <span>5.57 cm</span>
-              </div>
-              <span class="bar-chart__rate pass">12/12</span>
-            </div>
-            <div class="bar-chart__row">
-              <span class="bar-chart__label">ID 14</span>
-              <div class="bar-chart__bar" style="--pct:70.1%; --color: var(--accent-2)">
-                <span>5.61 cm</span>
-              </div>
-              <span class="bar-chart__rate pass">11/12</span>
-            </div>
-            <div class="bar-chart__row">
-              <span class="bar-chart__label">ID 15</span>
-              <div class="bar-chart__bar" style="--pct:69.8%; --color: var(--accent-2)">
-                <span>5.58 cm</span>
-              </div>
-              <span class="bar-chart__rate pass">11/12</span>
-            </div>
-            <div class="bar-chart__threshold" style="--pct:100%">
-              <span>8 cm threshold</span>
-            </div>
-          </div>
-        </div>
+        <article class="result reveal">
+          <span class="result__value">~1 h</span>
+          <h3>Battery Runtime</h3>
+          <p>The onboard battery supports extended testing beyond the required session duration.</p>
+        </article>
 
-        <div class="result-card">
-          <h3 class="result-card__title">Parking Accuracy</h3>
-          <p class="result-card__sub">18 trials · 5 cm threshold</p>
-          <div class="donut-chart">
-            <svg viewBox="0 0 100 100" width="140" height="140">
-              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--surface-3)" stroke-width="14"/>
-              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--accent)" stroke-width="14"
-                stroke-dasharray="133 66" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-              <text x="50" y="46" text-anchor="middle" fill="var(--text)" font-size="16" font-weight="700" font-family="Syne">10/18</text>
-              <text x="50" y="60" text-anchor="middle" fill="var(--text-dim)" font-size="8" font-family="DM Sans">PASS (56%)</text>
-            </svg>
-          </div>
-          <div class="result-stats">
-            <div class="rstat"><span class="rstat__label">Mean |ex|</span><span class="rstat__val">5.62 cm</span></div>
-            <div class="rstat"><span class="rstat__label">Mean |ey|</span><span class="rstat__val">5.62 cm</span></div>
-            <div class="rstat"><span class="rstat__label">Mean Euclidean d</span><span class="rstat__val warn">~8.0 cm</span></div>
-          </div>
-          <div class="partial-badge">PARTIAL PASS</div>
-        </div>
+        <article class="result reveal">
+          <span class="result__value">150 ms</span>
+          <h3>E-STOP Response</h3>
+          <p>The emergency stop system halts the vehicle quickly and reliably during tests.</p>
+        </article>
 
-        <div class="result-card">
-          <h3 class="result-card__title">Summon / Recall</h3>
-          <p class="result-card__sub">18 trials · 5 cm threshold</p>
-          <div class="donut-chart">
-            <svg viewBox="0 0 100 100" width="140" height="140">
-              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--surface-3)" stroke-width="14"/>
-              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--accent-2)" stroke-width="14"
-                stroke-dasharray="119 80" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-              <text x="50" y="46" text-anchor="middle" fill="var(--text)" font-size="16" font-weight="700" font-family="Syne">9/18</text>
-              <text x="50" y="60" text-anchor="middle" fill="var(--text-dim)" font-size="8" font-family="DM Sans">PASS (50%)</text>
-            </svg>
-          </div>
-          <div class="result-stats">
-            <div class="rstat"><span class="rstat__label">Mean |ex|</span><span class="rstat__val">5.71 cm</span></div>
-            <div class="rstat"><span class="rstat__label">Mean |ey|</span><span class="rstat__val">5.54 cm</span></div>
-            <div class="rstat"><span class="rstat__label">Mean Euclidean d</span><span class="rstat__val warn">~8.0 cm</span></div>
-          </div>
-          <div class="partial-badge">PARTIAL PASS</div>
-        </div>
-
-        <div class="result-card">
-          <h3 class="result-card__title">Control Subsystem</h3>
-          <p class="result-card__sub">5 trials across speed + steering setpoints</p>
-          <div class="result-stats result-stats--tall">
-            <div class="rstat"><span class="rstat__label">Mean Speed Error</span><span class="rstat__val pass">~6%</span></div>
-            <div class="rstat"><span class="rstat__label">Mean Steer Error</span><span class="rstat__val pass">1.6°</span></div>
-            <div class="rstat"><span class="rstat__label">Cmd-to-Actuator Latency</span><span class="rstat__val">45 ms</span></div>
-            <div class="rstat"><span class="rstat__label">Timeout-to-Stop</span><span class="rstat__val pass">150 ms</span></div>
-            <div class="rstat"><span class="rstat__label">L/R RPM Mismatch</span><span class="rstat__val">4%</span></div>
-          </div>
-        </div>
-
-        <div class="result-card">
-          <h3 class="result-card__title">LiDAR Object Detection</h3>
-          <p class="result-card__sub">5 surface types · 0.3–2.0 m range</p>
-          <div class="result-stats result-stats--tall">
-            <div class="rstat"><span class="rstat__label">Detection Rate</span><span class="rstat__val pass">100%</span></div>
-            <div class="rstat"><span class="rstat__label">Mean Distance Error</span><span class="rstat__val pass">0.022 m</span></div>
-            <div class="rstat"><span class="rstat__label">RMSE</span><span class="rstat__val">0.025 m</span></div>
-            <div class="rstat"><span class="rstat__label">Mean Latency</span><span class="rstat__val">67 ms</span></div>
-            <div class="rstat"><span class="rstat__label">Obstacle Avoidance</span><span class="rstat__val pass">6/6 PASS</span></div>
-          </div>
-        </div>
-
-        <div class="result-card">
-          <h3 class="result-card__title">Battery &amp; Power</h3>
-          <p class="result-card__sub">Lead-acid 12.8 V / 7 Ah</p>
-          <div class="power-modes">
-            <div class="pmode">
-              <span class="pmode__label">Idle</span>
-              <div class="pmode__bar" style="--w: 27%"></div>
-              <span class="pmode__val">11.4 W</span>
-            </div>
-            <div class="pmode">
-              <span class="pmode__label">Cruise</span>
-              <div class="pmode__bar" style="--w: 63%"></div>
-              <span class="pmode__val">26.0 W</span>
-            </div>
-            <div class="pmode">
-              <span class="pmode__label">Steering</span>
-              <div class="pmode__bar" style="--w: 100%"></div>
-              <span class="pmode__val">41.5 W</span>
-            </div>
-          </div>
-          <div class="result-stats">
-            <div class="rstat"><span class="rstat__label">Runtime to cutoff</span><span class="rstat__val pass">61 min</span></div>
-            <div class="rstat"><span class="rstat__label">Req. minimum</span><span class="rstat__val">15 min</span></div>
-            <div class="rstat"><span class="rstat__label">Margin</span><span class="rstat__val pass">4×</span></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Integration test matrix -->
-      <div class="integration-matrix">
-        <h3>Staged Integration Tests</h3>
-        <div class="stages">
-          <div class="stage pass"><span class="stage__num">0</span><span>Build + Flash Pico</span></div>
-          <div class="stage pass"><span class="stage__num">1</span><span>USB Serial Bytes</span></div>
-          <div class="stage pass"><span class="stage__num">2</span><span>ROS Topics Bringup</span></div>
-          <div class="stage pass"><span class="stage__num">3</span><span>Motors → cmd_vel</span></div>
-          <div class="stage pass"><span class="stage__num">4</span><span>Safety Chain</span></div>
-          <div class="stage pass"><span class="stage__num">5</span><span>E-STOP Latch/Clear</span></div>
-          <div class="stage pass"><span class="stage__num">6</span><span>LiDAR + SLAM Map</span></div>
-          <div class="stage pass"><span class="stage__num">7</span><span>App Joystick Drive</span></div>
-          <div class="stage pass"><span class="stage__num">8</span><span>Autonomous Nav</span></div>
-          <div class="stage pass"><span class="stage__num">9</span><span>App Tap-to-Navigate</span></div>
-        </div>
-        <p class="integration-matrix__note">All 10 stages passed ✓</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUDGET -->
-  <section class="section" id="budget">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__num">05</span>
-        <h2 class="section__title">Budget &amp; BOM</h2>
-        <p class="section__desc">Total product cost of $262.34 — proof that intelligent autonomy is achievable with accessible hardware.</p>
-      </div>
-
-      <div class="bom-layout">
-        <div class="bom-table-wrap">
-          <table class="bom-table">
-            <thead>
-              <tr>
-                <th>Component</th>
-                <th>Qty</th>
-                <th>Unit</th>
-                <th>Subtotal</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>SLAMTEC C1 LiDAR</td>
-                <td>1</td>
-                <td>$105.00</td>
-                <td class="bom-table__cost">$105.00</td>
-              </tr>
-              <tr>
-                <td>Raspberry Pi 5 + Pico (set)</td>
-                <td>1</td>
-                <td>$88.00</td>
-                <td class="bom-table__cost">$88.00</td>
-              </tr>
-              <tr>
-                <td>Power System</td>
-                <td>1</td>
-                <td>$37.71</td>
-                <td class="bom-table__cost">$37.71</td>
-              </tr>
-              <tr>
-                <td>Ackermann Chassis + DC Motors</td>
-                <td>1</td>
-                <td>$23.99</td>
-                <td class="bom-table__cost">$23.99</td>
-              </tr>
-              <tr>
-                <td>Steering Servo</td>
-                <td>1</td>
-                <td>$4.36</td>
-                <td class="bom-table__cost">$4.36</td>
-              </tr>
-              <tr>
-                <td>L298N H-bridge Motor Driver</td>
-                <td>1</td>
-                <td>$3.27</td>
-                <td class="bom-table__cost">$3.27</td>
-              </tr>
-              <tr class="bom-table__total">
-                <td colspan="3">Total Product Cost</td>
-                <td class="bom-table__cost">$262.34</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="bom-breakdown">
-          <h4>Cost Distribution</h4>
-          <div class="cost-bars">
-            <div class="cbr"><span class="cbr__label">LiDAR</span><div class="cbr__bar" style="--w:40%"><span>40%</span></div></div>
-            <div class="cbr"><span class="cbr__label">RPi 5 + Pico</span><div class="cbr__bar" style="--w:33.5%"><span>33.5%</span></div></div>
-            <div class="cbr"><span class="cbr__label">Power</span><div class="cbr__bar" style="--w:14.4%"><span>14.4%</span></div></div>
-            <div class="cbr"><span class="cbr__label">Chassis</span><div class="cbr__bar" style="--w:9.1%"><span>9.1%</span></div></div>
-            <div class="cbr"><span class="cbr__label">Other</span><div class="cbr__bar" style="--w:2.9%"><span>2.9%</span></div></div>
-          </div>
-
-          <div class="total-cost-note">
-            <p>Hardware + infrastructure (excl. labor): <strong>$297.34</strong></p>
-            <p>Engineering labor (6 × 200 h × $20/h): <strong>$24,000</strong></p>
-            <p class="total-cost-note__grand">Total Project Cost: <strong>$24,297.34</strong></p>
-          </div>
-        </div>
+        <article class="result reveal">
+          <span class="result__value">PASS</span>
+          <h3>Core Integration</h3>
+          <p>Mobile control, LiDAR mapping, navigation, motor actuation, and safety chain were integrated.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -876,115 +217,55 @@
   <!-- TEAM -->
   <section class="section section--dark" id="team">
     <div class="container">
-      <div class="section__header">
-        <span class="section__num">06</span>
-        <h2 class="section__title">The Team</h2>
-        <p class="section__desc">A flat engineering team of equal contributors. No designated lead — all members share collective responsibility.</p>
+      <div class="section__header reveal">
+        <p class="section__label">Team</p>
+        <h2>AutoNexa Team</h2>
+        <p>
+          A six-member engineering team with shared responsibility across the full system.
+        </p>
       </div>
 
       <div class="team-grid">
-        <div class="team-card team-card--power">
-          <div class="team-card__badge">Power &amp; Electrical</div>
-          <div class="team-members">
-            <div class="team-member">
-              <div class="team-member__avatar">II</div>
-              <div>
-                <h4>Ismayil Ibrahimli</h4>
-                <p>Battery, power distribution, regulators, wiring</p>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">ON</div>
-              <div>
-                <h4>Oghuz Novruzaliyev</h4>
-                <p>Battery, power distribution, regulators, wiring</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <article class="team-card reveal">
+          <h3>Power & Electrical</h3>
+          <p>Battery, power distribution, regulators, and wiring.</p>
+          <ul>
+            <li>Ismayil Ibrahimli</li>
+            <li>Oghuz Novruzaliyev</li>
+          </ul>
+        </article>
 
-        <div class="team-card team-card--core">
-          <div class="team-card__badge">Core System (Shared)</div>
-          <div class="team-members">
-            <div class="team-member">
-              <div class="team-member__avatar">AŞ</div>
-              <div>
-                <h4>Anıl Salih Çolak</h4>
-                <p>Embedded · Perception · Navigation · App · Integration</p>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">DZ</div>
-              <div>
-                <h4>Doğukan Zorlu</h4>
-                <p>Embedded · Perception · Navigation · App · Integration</p>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">EM</div>
-              <div>
-                <h4>Emre Mendeş</h4>
-                <p>Embedded · Perception · Navigation · App · Integration</p>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">UK</div>
-              <div>
-                <h4>Umut Kumral</h4>
-                <p>Embedded · Perception · Navigation · App · Integration</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <article class="team-card reveal">
+          <h3>Core System</h3>
+          <p>Embedded software, perception, navigation, mobile app, and integration.</p>
+          <ul>
+            <li>Anıl Salih Çolak</li>
+            <li>Doğukan Zorlu</li>
+            <li>Emre Mendeş</li>
+            <li>Umut Kumral</li>
+          </ul>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <div class="affiliation">
-        <div class="affiliation__block">
-          <span class="affiliation__label">Institution</span>
-          <span class="affiliation__val">Middle East Technical University (METU)</span>
-        </div>
-        <div class="affiliation__block">
-          <span class="affiliation__label">Department</span>
-          <span class="affiliation__val">Electrical &amp; Electronics Engineering</span>
-        </div>
-        <div class="affiliation__block">
-          <span class="affiliation__label">Course</span>
-          <span class="affiliation__val">EE493 / EE494 — Design Studio</span>
-        </div>
-        <div class="affiliation__block">
-          <span class="affiliation__label">Supervisor</span>
-          <span class="affiliation__val">Murat Eyüboğlu</span>
-        </div>
-        <div class="affiliation__block">
-          <span class="affiliation__label">Section</span>
-          <span class="affiliation__val">Design Studio Section 3</span>
-        </div>
-        <div class="affiliation__block">
-          <span class="affiliation__label">Report Date</span>
-          <span class="affiliation__val">31 May 2026</span>
-        </div>
-      </div>
+  <!-- FUTURE WORK -->
+  <section class="section section--final">
+    <div class="container final-card reveal">
+      <p class="section__label">Next Steps</p>
+      <h2>Future Improvements</h2>
+      <p>
+        The next iteration will focus on tighter final parking precision, closed-loop wheel-speed control,
+        and richer app visualization with real prototype media.
+      </p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__brand">
-          <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="1.5"/>
-            <circle cx="14" cy="14" r="5" fill="var(--accent)"/>
-            <line x1="14" y1="1" x2="14" y2="8" stroke="var(--accent)" stroke-width="1.5"/>
-            <line x1="14" y1="20" x2="14" y2="27" stroke="var(--accent)" stroke-width="1.5"/>
-            <line x1="1" y1="14" x2="8" y2="14" stroke="var(--accent)" stroke-width="1.5"/>
-            <line x1="20" y1="14" x2="27" y2="14" stroke="var(--accent)" stroke-width="1.5"/>
-          </svg>
-          <span>AutoNexa</span>
-        </div>
-        <p class="footer__text">Autonomous Parking &amp; Recall System · EE493/494 Final Report · METU EEE · 2026</p>
-        <p class="footer__mono">ROS 2 · Nav2 · SLAM Toolbox · Raspberry Pi · Flutter</p>
-      </div>
+    <div class="container footer__layout">
+      <span>AutoNexa</span>
+      <p>Autonomous Parking & Recall System · METU EEE · 2026</p>
     </div>
   </footer>
 
