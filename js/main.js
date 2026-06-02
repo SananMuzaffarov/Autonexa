@@ -1,6 +1,8 @@
 // AutoNexa Website Script
 // Simple interactions only: navigation, smooth scroll, reveal animation.
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
