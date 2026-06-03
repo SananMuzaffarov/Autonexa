@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,11 +21,11 @@
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
     <a class="nav__brand" href="#hero" aria-label="AutoNexa home">
-      <img src="autonexa-logo.png" alt="AutoNexa logo" class="nav__logo" />
+      <img src="/autonexa-logo.png" alt="AutoNexa logo" class="nav__logo" />
       <span>AutoNexa</span>
     </a>
 
-    <button class="nav__toggle" id="navToggle" aria-label="Open navigation">
+    <button class="nav__toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
@@ -33,10 +33,17 @@
 
     <ul class="nav__links" id="navLinks">
       <li><a href="#overview">Overview</a></li>
+      <li><a href="#demo">Demo</a></li>
       <li><a href="#architecture">Architecture</a></li>
       <li><a href="#results">Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#team">Team</a></li>
     </ul>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+      <span class="theme-toggle__icon" id="themeIcon">☾</span>
+      <span class="theme-toggle__text" id="themeText">Dark</span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -55,14 +62,15 @@
         </p>
 
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#overview">Explore Project</a>
-          <a class="btn btn--secondary" href="#results">See Results</a>
+          <a class="btn btn--primary" href="#demo">Watch Demo</a>
+          <a class="btn btn--secondary" href="#overview">Explore Project</a>
         </div>
       </div>
 
       <div class="hero__visual reveal">
         <div class="logo-card">
-          <img src="autonexa-logo.png" alt="AutoNexa logo" />
+          <img src="/autonexa-logo.png" alt="AutoNexa logo" />
+          <p>Autonomous Parking & Recall Prototype</p>
         </div>
       </div>
     </div>
@@ -84,37 +92,67 @@
         <article class="card reveal">
           <span class="card__mark"></span>
           <h3>Autonomous Parking</h3>
-          <p>
-            The vehicle drives to a selected parking slot and performs the maneuver
-            without manual control.
-          </p>
+          <p>The vehicle drives to a selected parking slot and performs the maneuver without manual control.</p>
         </article>
 
         <article class="card reveal">
           <span class="card__mark"></span>
           <h3>Vehicle Recall</h3>
-          <p>
-            The user can command the robot to return to a saved position from the mobile app.
-          </p>
+          <p>The user can command the robot to return to a saved position from the mobile app.</p>
         </article>
 
         <article class="card reveal">
           <span class="card__mark"></span>
           <h3>Live Environment Awareness</h3>
-          <p>
-            LiDAR-based perception allows the robot to understand the indoor test area
-            and avoid obstacles.
-          </p>
+          <p>LiDAR-based perception helps the robot understand the indoor test area and avoid obstacles.</p>
         </article>
 
         <article class="card reveal">
           <span class="card__mark"></span>
           <h3>Mobile Operator Console</h3>
-          <p>
-            The app provides control, navigation commands, system status, and emergency
-            stop access.
-          </p>
+          <p>The app provides control, navigation commands, system status, and emergency stop access.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO / DEMO -->
+  <section class="section section--media" id="demo">
+    <div class="container media-layout">
+      <div class="section__header reveal">
+        <p class="section__label">Demo</p>
+        <h2>Prototype Video</h2>
+        <p>
+          Add your prototype video here to show autonomous navigation, parking,
+          recall behavior, and mobile app operation.
+        </p>
+      </div>
+
+      <div class="video-card reveal">
+        <!-- LOCAL VIDEO OPTION:
+             Upload your video as assets/demo.mp4, then this player will work.
+             Optional: also upload assets/demo-poster.jpg for the thumbnail. -->
+        <video class="demo-video" controls preload="metadata" poster="assets/demo-poster.jpg">
+          <source src="assets/demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- YOUTUBE OPTION:
+             If you prefer YouTube, delete/comment the <video> above and use this iframe instead.
+             Replace VIDEO_ID with your YouTube video ID.
+        <div class="youtube-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="AutoNexa prototype demo"
+            allowfullscreen>
+          </iframe>
+        </div>
+        -->
+
+        <div class="video-card__note">
+          <strong>Suggested demo content:</strong>
+          <span>Mapping → autonomous parking → recall → emergency stop.</span>
+        </div>
       </div>
     </div>
   </section>
@@ -138,15 +176,11 @@
           <p>LiDAR scans the indoor test environment.</p>
         </div>
 
-        <div class="flow__arrow">→</div>
-
         <div class="flow__item">
           <span>02</span>
           <h3>Map</h3>
           <p>The robot builds and updates a live map.</p>
         </div>
-
-        <div class="flow__arrow">→</div>
 
         <div class="flow__item">
           <span>03</span>
@@ -154,15 +188,11 @@
           <p>The navigation stack selects a safe route.</p>
         </div>
 
-        <div class="flow__arrow">→</div>
-
         <div class="flow__item">
           <span>04</span>
           <h3>Check</h3>
           <p>Commands pass through software and hardware safety layers.</p>
         </div>
-
-        <div class="flow__arrow">→</div>
 
         <div class="flow__item">
           <span>05</span>
@@ -178,27 +208,6 @@
         <span>SLAMTEC C1 LiDAR</span>
         <span>Flutter App</span>
         <span>Ackermann Chassis</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEMO MEDIA PLACEHOLDER -->
-  <section class="section section--media" id="demo">
-    <div class="container media-layout">
-      <div class="section__header reveal">
-        <p class="section__label">Demo</p>
-        <h2>Prototype Media</h2>
-        <p>
-          Vehicle photos, app screenshots, and demo video can be added here after the final
-          media files are ready.
-        </p>
-      </div>
-
-      <div class="media-placeholder reveal">
-        <div>
-          <strong>Photo / Video Area</strong>
-          <p>Add vehicle image, testbed image, or a short parking demo clip.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -219,35 +228,100 @@
         <article class="result reveal">
           <span class="result__value">~8 cm</span>
           <h3>Parking Accuracy</h3>
-          <p>
-            Current prototype accuracy is in the practical sub-10 cm range,
-            with further tuning planned.
-          </p>
+          <p>Current prototype accuracy is in the practical sub-10 cm range, with further tuning planned.</p>
         </article>
 
         <article class="result reveal">
           <span class="result__value">~1 h</span>
           <h3>Battery Runtime</h3>
-          <p>
-            The onboard battery supports extended testing beyond the required session duration.
-          </p>
+          <p>The onboard battery supports extended testing beyond the required session duration.</p>
         </article>
 
         <article class="result reveal">
           <span class="result__value">150 ms</span>
           <h3>E-STOP Response</h3>
-          <p>
-            The emergency stop system halts the vehicle quickly and reliably during tests.
-          </p>
+          <p>The emergency stop system halts the vehicle quickly and reliably during tests.</p>
         </article>
 
         <article class="result reveal">
           <span class="result__value">PASS</span>
           <h3>Core Integration</h3>
-          <p>
-            Mobile control, LiDAR mapping, navigation, motor actuation, and safety chain
-            were integrated.
-          </p>
+          <p>Mobile control, LiDAR mapping, navigation, motor actuation, and safety chain were integrated.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--faq" id="faq">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          Quick answers about how AutoNexa works, what it can do, and what will be improved next.
+        </p>
+      </div>
+
+      <div class="faq-list reveal">
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>Does AutoNexa require a pre-saved map?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. The prototype builds a live map of the indoor test area using LiDAR-based perception.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>Can it park autonomously?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. After a command is given from the mobile app, the vehicle navigates and performs the parking maneuver without manual control.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>How does it avoid obstacles?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>AutoNexa uses LiDAR data to detect the environment and updates the navigation map before motion commands are sent to the motors.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>What happens if communication is lost?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The system includes timeout-based stopping and emergency stop behavior to keep the robot safe during testing.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>Can the user manually control the vehicle?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The mobile app supports manual driving, navigation commands, system status monitoring, and emergency stop access.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>What is the current main limitation?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The current prototype reaches practical sub-10 cm parking accuracy. Further tuning is planned to improve final parking precision.</p>
+          </div>
         </article>
       </div>
     </div>
@@ -259,9 +333,7 @@
       <div class="section__header reveal">
         <p class="section__label">Team</p>
         <h2>AutoNexa Team</h2>
-        <p>
-          A six-member engineering team with shared responsibility across the full system.
-        </p>
+        <p>A six-member engineering team with shared responsibility across the full system.</p>
       </div>
 
       <div class="team-grid">
@@ -294,8 +366,8 @@
       <p class="section__label">Next Steps</p>
       <h2>Future Improvements</h2>
       <p>
-        The next iteration will focus on tighter final parking precision, closed-loop
-        wheel-speed control, and richer app visualization with real prototype media.
+        The next iteration will focus on tighter final parking precision, closed-loop wheel-speed control,
+        and richer app visualization with real prototype media.
       </p>
     </div>
   </section>
