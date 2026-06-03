@@ -1,73 +1,122 @@
-// AutoNexa Website Script
-// Simple interactions only: navigation, smooth scroll, reveal animation.
+// AutoNexa Website — theme toggle, mobile nav, FAQ, reveal animations
 
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.getElementById("nav");
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  const themeText = document.getElementById("themeText");
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.getElementById('nav');
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  // Change navbar style after scrolling
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
+  // NAV SCROLL EFFECT
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
   });
 
-  // Mobile navigation toggle
+  // MOBILE NAV
   if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
-  // Smooth scroll and close mobile menu
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', event => {
-      const target = document.querySelector(link.getAttribute('href'));
+  // SMOOTH SCROLL
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const target = document.querySelector(link.getAttribute("href"));
       if (!target) return;
 
       event.preventDefault();
-      navLinks?.classList.remove('open');
-
       const offset = 78;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({ top, behavior: "smooth" });
     });
   });
 
-  // Active navigation link
-  const sections = document.querySelectorAll('section[id], header[id]');
-  const links = document.querySelectorAll('.nav__links a');
+  // THEME TOGGLE
+  const savedTheme = localStorage.getItem("autonexa-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
 
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+  setTheme(initialTheme);
 
-      const id = entry.target.id;
-      links.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-      });
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      setTheme(nextTheme);
+      localStorage.setItem("autonexa-theme", nextTheme);
     });
-  }, { threshold: 0.35 });
+  }
 
-  sections.forEach(section => sectionObserver.observe(section));
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
 
-  // Reveal elements on scroll
-  const revealElements = document.querySelectorAll('.reveal');
+    if (themeIcon && themeText) {
+      if (theme === "dark") {
+        themeIcon.textContent = "☾";
+        themeText.textContent = "Dark";
+      } else {
+        themeIcon.textContent = "☀";
+        themeText.textContent = "Light";
+      }
+    }
+  }
 
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
+  // FAQ ACCORDION
+  document.querySelectorAll(".faq-question").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.closest(".faq-item");
+      const answer = item.querySelector(".faq-answer");
+      const isOpen = item.classList.contains("active");
+
+      // Close all other FAQ items
+      document.querySelectorAll(".faq-item").forEach((otherItem) => {
+        const otherAnswer = otherItem.querySelector(".faq-answer");
+        const otherButton = otherItem.querySelector(".faq-question");
+        otherItem.classList.remove("active");
+        otherAnswer.style.maxHeight = null;
+        otherButton.setAttribute("aria-expanded", "false");
+      });
+
+      // Open selected item if it was closed
+      if (!isOpen) {
+        item.classList.add("active");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        button.setAttribute("aria-expanded", "true");
       }
     });
-  }, { threshold: 0.12 });
-
-  revealElements.forEach((element, index) => {
-    element.style.transitionDelay = `${Math.min(index * 0.04, 0.24)}s`;
-    revealObserver.observe(element);
   });
 
-  console.log('%cAutoNexa website loaded', 'color: #c8102e; font-weight: 700;');
+  // REVEAL ON SCROLL
+  const revealElements = document.querySelectorAll(".reveal");
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealElements.forEach((element, index) => {
+    element.style.transitionDelay = `${Math.min(index % 5, 4) * 0.05}s`;
+    revealObserver.observe(element);
+  });
 });
