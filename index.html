@@ -22,42 +22,44 @@
     </button>
 
     <ul class="nav__links" id="navLinks">
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#demo">Demo</a></li>
-      <li><a href="#architecture">Architecture</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#team">Team</a></li>
+      <li><a href="#overview" data-i18n="nav.overview">Overview</a></li>
+      <li><a href="#demo" data-i18n="nav.demo">Demo</a></li>
+      <li><a href="#architecture" data-i18n="nav.architecture">Architecture</a></li>
+      <li><a href="#results" data-i18n="nav.results">Results</a></li>
+      <li><a href="#resources" data-i18n="nav.resources">Resources</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      <li><a href="#team" data-i18n="nav.team">Team</a></li>
     </ul>
 
-    <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
-      <span id="themeIcon">☾</span>
-      <span id="themeText">Dark</span>
-    </button>
+    <div class="nav__actions">
+      <button class="pill-toggle" id="langToggle" aria-label="Switch language">
+        <span data-i18n="ui.language">EN</span>
+      </button>
+      <button class="pill-toggle" id="themeToggle" aria-label="Switch theme">
+        <span id="themeText">Dark</span>
+      </button>
+    </div>
   </nav>
 
   <header class="hero" id="hero">
     <div class="hero__bg"></div>
     <div class="container hero__layout">
       <div class="hero__content reveal">
-        <p class="eyebrow">METU EE493 / EE494 Project</p>
-        <h1>Autonomous Parking & Recall System</h1>
-        <p class="hero__lead">
-          AutoNexa is a low-cost indoor autonomy prototype with live LiDAR mapping,
-          vehicle-like navigation, mobile control, and layered safety.
+        <p class="eyebrow" data-i18n="hero.eyebrow">METU EE493 / EE494 Project</p>
+        <h1 data-i18n="hero.title">Autonomous Parking & Recall System</h1>
+        <p class="hero__lead" data-i18n="hero.lead">
+          AutoNexa is a compact autonomous vehicle prototype that maps its surroundings, parks itself, and returns to a selected position through a mobile operator console.
         </p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#demo">Watch Demo</a>
-          <a class="btn btn--secondary" href="#results">View Results</a>
-          <a class="btn btn--ghost" href="#resources">Open Poster</a>
+          <a class="btn btn--primary" href="#demo" data-i18n="hero.ctaDemo">Watch Demo</a>
+          <a class="btn btn--secondary" href="#results" data-i18n="hero.ctaResults">View Results</a>
         </div>
       </div>
 
       <div class="hero__visual reveal">
         <div class="logo-card">
           <img src="/autonexa-logo.png" alt="AutoNexa logo" />
-          <p>No markers. No pre-mapping. Phone-only operation.</p>
+          <p data-i18n="hero.logoCaption">Live mapping, autonomous parking, recall, and mobile control.</p>
         </div>
       </div>
     </div>
@@ -66,34 +68,31 @@
   <section class="section" id="overview">
     <div class="container">
       <div class="section__header reveal">
-        <p class="section__label">Overview</p>
-        <h2>What AutoNexa Does</h2>
-        <p>
-          The system combines sensing, navigation, embedded control, and a mobile app
-          into one small-scale autonomous parking platform.
-        </p>
+        <p class="section__label" data-i18n="overview.label">Overview</p>
+        <h2 data-i18n="overview.title">What AutoNexa Does</h2>
+        <p data-i18n="overview.text">The system combines sensing, navigation, embedded control, and a mobile app into one small-scale autonomous parking platform.</p>
       </div>
 
       <div class="card-grid">
         <article class="card reveal">
           <span class="card__mark"></span>
-          <h3>Autonomous Parking</h3>
-          <p>The vehicle drives to selected parking bays and performs the maneuver without manual control.</p>
+          <h3 data-i18n="overview.card1.title">Autonomous Parking</h3>
+          <p data-i18n="overview.card1.text">The vehicle drives to a selected parking slot and performs the maneuver without manual control.</p>
         </article>
         <article class="card reveal">
           <span class="card__mark"></span>
-          <h3>Vehicle Recall</h3>
-          <p>The user can command the robot to return to a saved recall point from the mobile app.</p>
+          <h3 data-i18n="overview.card2.title">Vehicle Recall</h3>
+          <p data-i18n="overview.card2.text">The user can command the robot to return to a saved position from the mobile app.</p>
         </article>
         <article class="card reveal">
           <span class="card__mark"></span>
-          <h3>Live Environment Awareness</h3>
-          <p>LiDAR-based perception helps the robot understand the indoor test area and avoid obstacles.</p>
+          <h3 data-i18n="overview.card3.title">Live Environment Awareness</h3>
+          <p data-i18n="overview.card3.text">LiDAR-based perception helps the robot understand the indoor test area and avoid obstacles.</p>
         </article>
         <article class="card reveal">
           <span class="card__mark"></span>
-          <h3>Mobile Operator Console</h3>
-          <p>The app supports manual driving, goal selection, waypoint storage, monitoring, and E-STOP.</p>
+          <h3 data-i18n="overview.card4.title">Mobile Operator Console</h3>
+          <p data-i18n="overview.card4.text">The app provides control, navigation commands, system status, and emergency stop access.</p>
         </article>
       </div>
     </div>
@@ -102,12 +101,9 @@
   <section class="section section--media" id="demo">
     <div class="container media-layout">
       <div class="section__header reveal">
-        <p class="section__label">Demo</p>
-        <h2>Prototype Video</h2>
-        <p>
-          Use this section to show the robot mapping the testbed, parking, recalling,
-          and responding to mobile app commands.
-        </p>
+        <p class="section__label" data-i18n="demo.label">Demo</p>
+        <h2 data-i18n="demo.title">Prototype Video</h2>
+        <p data-i18n="demo.text">Add your prototype video here to show autonomous navigation, parking, recall behavior, and mobile app operation.</p>
       </div>
 
       <div class="video-card reveal">
@@ -116,8 +112,8 @@
           Your browser does not support the video tag.
         </video>
         <div class="video-card__note">
-          <strong>Suggested clip:</strong>
-          <span>Map → park → recall → emergency stop.</span>
+          <strong data-i18n="demo.noteTitle">Suggested demo content:</strong>
+          <span data-i18n="demo.noteText">Mapping → autonomous parking → recall → emergency stop.</span>
         </div>
       </div>
     </div>
@@ -126,20 +122,37 @@
   <section class="section section--dark" id="architecture">
     <div class="container">
       <div class="section__header reveal">
-        <p class="section__label">Architecture</p>
-        <h2>A Simple, Safe Control Chain</h2>
-        <p>
-          AutoNexa follows a layered structure: sensing first, decision-making next,
-          and actuator commands only after safety checks.
-        </p>
+        <p class="section__label" data-i18n="architecture.label">Architecture</p>
+        <h2 data-i18n="architecture.title">A Simple, Safe Control Chain</h2>
+        <p data-i18n="architecture.text">AutoNexa follows a layered structure: sensing first, decision-making next, and actuator commands only after safety checks.</p>
       </div>
 
       <div class="flow reveal">
-        <div class="flow__item"><span>01</span><h3>Sense</h3><p>LiDAR scans the indoor test environment.</p></div>
-        <div class="flow__item"><span>02</span><h3>Map</h3><p>The robot builds and updates a live map.</p></div>
-        <div class="flow__item"><span>03</span><h3>Plan</h3><p>The navigation stack selects vehicle-like routes.</p></div>
-        <div class="flow__item"><span>04</span><h3>Check</h3><p>Commands pass through software and firmware safety layers.</p></div>
-        <div class="flow__item"><span>05</span><h3>Move</h3><p>The embedded controller drives steering and motors.</p></div>
+        <div class="flow__item">
+          <span>01</span>
+          <h3 data-i18n="architecture.step1.title">Sense</h3>
+          <p data-i18n="architecture.step1.text">LiDAR scans the indoor test environment.</p>
+        </div>
+        <div class="flow__item">
+          <span>02</span>
+          <h3 data-i18n="architecture.step2.title">Map</h3>
+          <p data-i18n="architecture.step2.text">The robot builds and updates a live map.</p>
+        </div>
+        <div class="flow__item">
+          <span>03</span>
+          <h3 data-i18n="architecture.step3.title">Plan</h3>
+          <p data-i18n="architecture.step3.text">The navigation stack selects a safe route.</p>
+        </div>
+        <div class="flow__item">
+          <span>04</span>
+          <h3 data-i18n="architecture.step4.title">Check</h3>
+          <p data-i18n="architecture.step4.text">Commands pass through software and hardware safety layers.</p>
+        </div>
+        <div class="flow__item">
+          <span>05</span>
+          <h3 data-i18n="architecture.step5.title">Move</h3>
+          <p data-i18n="architecture.step5.text">The embedded controller drives the steering and motors.</p>
+        </div>
       </div>
 
       <div class="tech-strip reveal">
@@ -156,136 +169,122 @@
   <section class="section" id="results">
     <div class="container">
       <div class="section__header reveal">
-        <p class="section__label">Updated Results</p>
-        <h2>Complete System Test Performance</h2>
-        <p>
-          The latest tests evaluate the full stack from localization and planning to
-          embedded actuation, mobile operation, and safety behavior.
-        </p>
+        <p class="section__label" data-i18n="results.label">Results</p>
+        <h2 data-i18n="results.title">Updated Complete-System Results</h2>
+        <p data-i18n="results.text">The latest tests evaluate autonomous parking and recall over a large origin-to-destination matrix, showing repeatable system-level performance.</p>
       </div>
 
-      <div class="results-grid results-grid--six">
+      <div class="results-grid">
         <article class="result reveal">
           <span class="result__value">86.8%</span>
-          <h3>Combined Pass Rate</h3>
-          <p>250 of 288 park and summon test cells passed the repeatability threshold.</p>
+          <h3 data-i18n="results.card1.title">Combined Pass Rate</h3>
+          <p data-i18n="results.card1.text">250 successful cells out of 288 complete-system test cells.</p>
         </article>
         <article class="result reveal">
           <span class="result__value">87.5%</span>
-          <h3>Parking Pass Rate</h3>
-          <p>210 of 240 origin-to-destination parking cells passed.</p>
+          <h3 data-i18n="results.card2.title">Parking Pass Rate</h3>
+          <p data-i18n="results.card2.text">210 successful parking cells out of 240 origin-to-destination cases.</p>
         </article>
         <article class="result reveal">
           <span class="result__value">83.3%</span>
-          <h3>Recall Pass Rate</h3>
-          <p>40 of 48 summon/recall cells were successful.</p>
+          <h3 data-i18n="results.card3.title">Recall Pass Rate</h3>
+          <p data-i18n="results.card3.text">40 successful recall cells out of 48 summon cases.</p>
         </article>
         <article class="result reveal">
           <span class="result__value">1440</span>
-          <h3>Autonomous Runs</h3>
-          <p>The complete test matrix represents 1440 autonomous navigation attempts.</p>
+          <h3 data-i18n="results.card4.title">Autonomous Runs</h3>
+          <p data-i18n="results.card4.text">Repeated trials across parking and recall scenarios.</p>
         </article>
         <article class="result reveal">
           <span class="result__value">150 ms</span>
-          <h3>E-STOP Response</h3>
-          <p>The safety stop response remains below the 200 ms requirement.</p>
+          <h3 data-i18n="results.card5.title">E-STOP Response</h3>
+          <p data-i18n="results.card5.text">Emergency stop response stayed within the safety target.</p>
         </article>
         <article class="result reveal">
           <span class="result__value">120 min</span>
-          <h3>Power Endurance</h3>
-          <p>The battery endurance exceeds the required 15-minute test session.</p>
+          <h3 data-i18n="results.card6.title">Power Endurance</h3>
+          <p data-i18n="results.card6.text">Battery endurance exceeded the required test-session duration.</p>
         </article>
       </div>
 
-      <div class="insight-panel reveal">
+      <div class="insight-card reveal">
         <div>
-          <p class="section__label">Failure Insight</p>
-          <h3>Failures are geometric, not random.</h3>
-          <p>
-            Remaining fails mainly appear in long cross-map routes, reverse back-in maneuvers,
-            obstacle-adjacent narrow approaches, and final goal-tolerance overshoot.
-          </p>
+          <p class="section__label" data-i18n="insights.label">Failure Insight</p>
+          <h3 data-i18n="insights.title">Most failures were geometric and fixable, not random.</h3>
         </div>
-        <div class="fix-list">
-          <span>Localization relocalize + EKF</span>
-          <span>Reverse steering calibration</span>
-          <span>Obstacle-adjacent tuning</span>
-          <span>Closed-loop speed control</span>
+        <div class="insight-list">
+          <span data-i18n="insights.item1">Localization drift on long routes</span>
+          <span data-i18n="insights.item2">Reverse steering calibration on back-in bays</span>
+          <span data-i18n="insights.item3">Obstacle-adjacent narrow approaches</span>
+          <span data-i18n="insights.item4">Goal-tolerance overshoot from open-loop drive</span>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section section--resources" id="resources">
-    <div class="container">
+    <div class="container resources-layout">
       <div class="section__header reveal">
-        <p class="section__label">Resources</p>
-        <h2>Poster & Test Evidence</h2>
-        <p>
-          The website should show the headline numbers first, then let visitors open the
-          detailed poster and complete test report if they want evidence.
-        </p>
+        <p class="section__label" data-i18n="resources.label">Resources</p>
+        <h2 data-i18n="resources.title">Poster & Test Evidence</h2>
+        <p data-i18n="resources.text">The poster gives a compact project overview, while the complete test report contains the updated parking and recall result matrices.</p>
+        <div class="resource-actions">
+          <a class="btn btn--primary" href="assets/poster.pdf" target="_blank" rel="noopener" data-i18n="resources.posterBtn">View Poster</a>
+          <a class="btn btn--secondary" href="assets/test-results.pdf" target="_blank" rel="noopener" data-i18n="resources.testBtn">View Test Report</a>
+        </div>
       </div>
 
-      <div class="resources-grid">
-        <article class="resource-card reveal">
-          <div class="resource-card__preview resource-card__preview--poster">
-            <img src="assets/poster-preview.png" alt="AutoNexa poster preview" />
-          </div>
-          <div class="resource-card__body">
-            <h3>Project Poster</h3>
-            <p>One-page summary of the system, requirements, differentiators, cost, and results.</p>
-            <a class="btn btn--primary" href="assets/poster.pdf" target="_blank" rel="noopener">Open Poster</a>
-          </div>
-        </article>
-
-        <article class="resource-card reveal">
-          <div class="resource-card__preview resource-card__preview--report">
-            <div class="report-preview">
-              <strong>Complete System Test</strong>
-              <span>Park: 210/240</span>
-              <span>Summon: 40/48</span>
-              <span>Combined: 250/288</span>
-            </div>
-          </div>
-          <div class="resource-card__body">
-            <h3>Test Results Report</h3>
-            <p>Detailed park/summon matrix, pass-rate analysis, and failure-mode breakdown.</p>
-            <a class="btn btn--secondary" href="assets/test-results.pdf" target="_blank" rel="noopener">Open Test Report</a>
-          </div>
-        </article>
-      </div>
+      <a class="poster-preview reveal" href="assets/poster.pdf" target="_blank" rel="noopener" aria-label="Open AutoNexa poster">
+        <img src="assets/poster-preview.png" alt="AutoNexa poster preview" />
+        <span data-i18n="resources.preview">Open full poster</span>
+      </a>
     </div>
   </section>
 
   <section class="section section--faq" id="faq">
     <div class="container">
       <div class="section__header reveal">
-        <p class="section__label">FAQ</p>
-        <h2>Frequently Asked Questions</h2>
-        <p>Quick answers about how AutoNexa works and what the latest results mean.</p>
+        <p class="section__label" data-i18n="faq.label">FAQ</p>
+        <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
+        <p data-i18n="faq.text">Quick answers about how AutoNexa works, what it can do, and what will be improved next.</p>
       </div>
 
       <div class="faq-list reveal">
         <article class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false"><span>Does AutoNexa require a pre-saved map?</span><span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>No. The prototype uses LiDAR-based mapping to build and update its environment representation.</p></div>
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span data-i18n="faq.q1">Does AutoNexa require a pre-saved map?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p data-i18n="faq.a1">No. The prototype can build a live map of the indoor test area using LiDAR-based perception.</p></div>
         </article>
         <article class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false"><span>How was performance tested?</span><span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>The complete system was tested across parking and recall origin-destination cells. Each cell used five repeated trials, and a cell passed when at least four of five trials succeeded.</p></div>
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span data-i18n="faq.q2">Can it park autonomously?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p data-i18n="faq.a2">Yes. After a command is given from the mobile app, the vehicle navigates and performs the parking maneuver without manual control.</p></div>
         </article>
         <article class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false"><span>What are the latest pass rates?</span><span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>The latest complete-system result is 87.5% for parking, 83.3% for recall, and 86.8% combined.</p></div>
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span data-i18n="faq.q3">How strong are the latest test results?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p data-i18n="faq.a3">The complete-system tests achieved 86.8% combined pass rate, with 87.5% parking and 83.3% recall pass rates.</p></div>
         </article>
         <article class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false"><span>What happens if communication is lost?</span><span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>The system includes timeout-based stopping and emergency-stop behavior to keep the robot safe during testing.</p></div>
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span data-i18n="faq.q4">What happens if communication is lost?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p data-i18n="faq.a4">The system includes timeout-based stopping and emergency stop behavior to keep the robot safe during testing.</p></div>
         </article>
         <article class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false"><span>What is the main improvement target?</span><span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>The main targets are tighter final-position control, reverse steering calibration, stronger localization over long routes, and closed-loop wheel-speed control.</p></div>
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span data-i18n="faq.q5">Can the user manually control the vehicle?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p data-i18n="faq.a5">Yes. The mobile app supports manual driving, navigation commands, system status monitoring, waypoint storage, and emergency stop access.</p></div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span data-i18n="faq.q6">What is the current main improvement target?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p data-i18n="faq.a6">The next improvements focus on localization robustness, reverse steering calibration, obstacle-adjacent approaches, and closed-loop wheel-speed control.</p></div>
         </article>
       </div>
     </div>
@@ -294,21 +293,29 @@
   <section class="section section--dark" id="team">
     <div class="container">
       <div class="section__header reveal">
-        <p class="section__label">Team</p>
-        <h2>AutoNexa Team</h2>
-        <p>A six-member engineering team with shared responsibility across the full system.</p>
+        <p class="section__label" data-i18n="team.label">Team</p>
+        <h2 data-i18n="team.title">AutoNexa Team</h2>
+        <p data-i18n="team.text">A six-member engineering team with shared responsibility across the full system.</p>
       </div>
 
       <div class="team-grid">
         <article class="team-card reveal">
-          <h3>Power & Electrical</h3>
-          <p>Battery, power distribution, regulators, and wiring.</p>
-          <ul><li>Ismayil Ibrahimli</li><li>Oghuz Novruzaliyev</li></ul>
+          <h3 data-i18n="team.powerTitle">Power & Electrical</h3>
+          <p data-i18n="team.powerText">Battery, power distribution, regulators, and wiring.</p>
+          <ul>
+            <li>Ismayil Ibrahimli</li>
+            <li>Oghuz Novruzaliyev</li>
+          </ul>
         </article>
         <article class="team-card reveal">
-          <h3>Core System</h3>
-          <p>Embedded software, perception, navigation, mobile app, and integration.</p>
-          <ul><li>Anıl Salih Çolak</li><li>Doğukan Zorlu</li><li>Emre Mendeş</li><li>Umut Kumral</li></ul>
+          <h3 data-i18n="team.coreTitle">Core System</h3>
+          <p data-i18n="team.coreText">Embedded software, perception, navigation, mobile app, and integration.</p>
+          <ul>
+            <li>Anıl Salih Çolak</li>
+            <li>Doğukan Zorlu</li>
+            <li>Emre Mendeş</li>
+            <li>Umut Kumral</li>
+          </ul>
         </article>
       </div>
     </div>
@@ -316,19 +323,16 @@
 
   <section class="section section--final">
     <div class="container final-card reveal">
-      <p class="section__label">Next Steps</p>
-      <h2>Future Improvements</h2>
-      <p>
-        The next iteration will focus on closed-loop wheel-speed control, reverse-parking tuning,
-        stronger localization over long routes, and richer app visualization with real prototype media.
-      </p>
+      <p class="section__label" data-i18n="future.label">Next Steps</p>
+      <h2 data-i18n="future.title">Future Improvements</h2>
+      <p data-i18n="future.text">The next iteration will focus on tighter final parking precision, closed-loop wheel-speed control, and richer app visualization with real prototype media.</p>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container footer__layout">
       <span>AutoNexa</span>
-      <p>Autonomous Parking & Recall System · METU EEE · 2026</p>
+      <p data-i18n="footer.text">Autonomous Parking & Recall System · METU EEE · 2026</p>
     </div>
   </footer>
 
